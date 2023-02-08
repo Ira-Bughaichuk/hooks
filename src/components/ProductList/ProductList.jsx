@@ -6,8 +6,8 @@ export const ProductList = ({items, onClick}) => {
       <ul>
           {items.map((item) => {
               const { name, price, id } = item
-              return <li key={id} onClick={()=>onClick(item)} >
-                  <p>{name}: {price}</p>
+              return <li key={id} onClick={()=>onClick(id)} >
+                  <p>{name}: ${price}</p>
                   
               </li>
           })}

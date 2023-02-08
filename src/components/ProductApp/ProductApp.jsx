@@ -7,7 +7,7 @@ import { Modal } from '../Modal/Modal';
 function ProductApp() {
     const [products, setProducts] = useState([]);
     const [open, setOpen] = useState(false);
-    const [product, setProduct] = useState(null);
+    const [productId, setProductId] = useState(null);
     
     useEffect(() => {
         fetchProducts().then((data) => {
@@ -20,13 +20,13 @@ function ProductApp() {
         setOpen(prev => !prev)
     }
     const getValue = (value) => {
-        setProduct(value);
+        setProductId(value);
         toggle()
     }
     return (
         <>
             <ProductList onClick={getValue} items={products} />
-            {open ? <Modal onClose={toggle} product={product} /> : null}
+            {open ? <Modal onClose={toggle} productId={productId} /> : null}
            
         </>
        
