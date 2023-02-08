@@ -8,3 +8,13 @@ async function fetchProducts() {
   // console.log(products.data);
 }
 export default fetchProducts;
+
+
+
+
+
+export async function fetchProductById(id) {
+    const {data} = await productUrl.get(`/${id}`);
+    return data;
+  // console.log(products.data);
+}
